@@ -1,4 +1,4 @@
-@extends('layout.home')
+@extends('layout.acreditados')
 
 <?php
 function myfunction($v)
@@ -45,7 +45,7 @@ $a=array("Horse","Dog","Cat");
 </nav>
 	<div class="pagina-soporte-container">
 		<div class="row col-12">
-			<h1 class="soporte-bienvenida"> ¡Hola! ¿Cómo podemos ayudarte? </h1>
+			<h1 class="soporte-bienvenida"> Acreditado </h1>
 		</div>
 		<div>
 		<p class="soporte-descripcion">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Amet volutpat consequat mauris nunc congue nisi vitae suscipit. Sit amet aliquam id diam maecenas ultricies. </p>

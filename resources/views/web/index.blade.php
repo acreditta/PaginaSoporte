@@ -26,19 +26,19 @@ $a=array("Horse","Dog","Cat");
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Insignias Digitales</a>
+        <a class="nav-link" href="/">Insignias Digitales</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Blog</a>
+        <a class="nav-link" href="/">Blog</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Nosotros</a>
+        <a class="nav-link" href="/">Nosotros</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Contáctanos</a>
+        <a class="nav-link" href="/">Contáctanos</a>
       </li>
     </ul>
   </div>
@@ -54,12 +54,12 @@ $a=array("Horse","Dog","Cat");
 		<div class="acreditados-card">
 			<h1 class="acreditados-card-title">Acreditados</h1>
 			<p class="acreditados-card-desc">Soporte para aquellos que han recibido insignias digitales emitidas a través de Acreditta</p>
-			<a class="ir-al-articulo-button">Ir</a>
+			<a href="/acreditados" class="ir-al-articulo-button">Ir</a>
 		</div>
 		<div class="administradores-card">
 			<h1 class="administrador-card-title">Administradores</h1>
 			<p class="administrador-card-desc">Artículos para quienes emiten insignias a sus estudiantes y clientes con Acreditta</p>
-			<a class="ir-al-articulo-button">Ir</a>
+			<a href="/administrador" class="ir-al-articulo-button">Ir</a>
 		</div>
 		</div>
 	</div>

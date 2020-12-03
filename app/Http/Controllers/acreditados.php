@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 class acreditados extends Controller
 {
-    public function index()
+    public function acreditados()
     {
     	return view('web.acreditados');
     }

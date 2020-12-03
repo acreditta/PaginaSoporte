@@ -1,18 +1,5 @@
 @extends('layout.home')
 
-<?php
-function myfunction($v)
-{
-if ($v==="Dog")
-  {
-  return "Fido";
-  }
-return $v;
-}
-
-$a=array("Horse","Dog","Cat");
-// print_r(array_map("myfunction",$a));
-?>
 
 @section('content')
 <nav class="navbar navbar-expand-lg navbar navbar-dark" style="background-color: #0F305D;">
@@ -51,16 +38,6 @@ $a=array("Horse","Dog","Cat");
 		<p class="soporte-descripcion">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Amet volutpat consequat mauris nunc congue nisi vitae suscipit. Sit amet aliquam id diam maecenas ultricies. </p>
 		</div>
 		<div class="menu-principal-container">
-		<div class="acreditados-card">
-			<h1 class="acreditados-card-title">Acreditados</h1>
-			<p class="acreditados-card-desc">Soporte para aquellos que han recibido insignias digitales emitidas a través de Acreditta</p>
-			<a class="ir-al-articulo-button">Ir</a>
-		</div>
-		<div class="administradores-card">
-			<h1 class="administrador-card-title">Administradores</h1>
-			<p class="administrador-card-desc">Artículos para quienes emiten insignias a sus estudiantes y clientes con Acreditta</p>
-			<a class="ir-al-articulo-button">Ir</a>
-		</div>
 		</div>
 	</div>
 

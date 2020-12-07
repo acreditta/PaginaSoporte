@@ -1,19 +1,5 @@
 @extends('layout.home')
 
-<?php
-function myfunction($v)
-{
-if ($v==="Dog")
-  {
-  return "Fido";
-  }
-return $v;
-}
-
-$a=array("Horse","Dog","Cat");
-// print_r(array_map("myfunction",$a));
-?>
-
 @section('content')
 <nav class="navbar navbar-expand-lg navbar navbar-dark" style="background-color: #0F305D;">
   <a class="navbar-brand" href="#">

@@ -1,17 +1,20 @@
-@extends('layout.acreditados')
+@extends('layout.home')
 
-<?php
-function myfunction($v)
-{
-if ($v==="Dog")
-  {
-  return "Fido";
-  }
-return $v;
-}
+<?php 
 
-$a=array("Horse","Dog","Cat");
-// print_r(array_map("myfunction",$a));
+$articulosAcreditado = array(['Tengo certificaciones adicionales de un emisor de insignias de Acclaim. ¿Cómo obtengo insignias para esas certificaciones?', 'Algunos emisores optan por ofrecer insignias para una selección de sus
+programas, como la versión más actual de una certificación...
+', 'https://www.acreditta.com/Articulos/Acreditado/Aceptar_una_insignia/Tengo_Certificaciones.pdf'], ['¿Cómo aceptar y compartir una insignia?', 'Recibirás un correo notificándote que se te ha emitido una insignia. Haz clic en “Accept your badge” y eso te llevará a la plataforma...
+', 'https://www.acreditta.com/Articulos/Acreditado/Aceptar_una_insignia/C-mo-aceptar-y-compartir-mi-insignia_.pdf'], ['¿Cómo administro una insignia emitida a mi organización?', 'Hay dos tipos de insignias emitidas en Acclaim: insignias de usuario e insignias
+institucionales...', 'https://www.acreditta.com/Articulos/Acreditado/Aceptar_una_insignia/C-mo-administro-una-insignia-emitida-a-mi-organizaci-n_.pdf'], ['¿Cómo empiezo?
+', 'Hay dos pasos para comenzar con Acclaim...
+', 'https://www.acreditta.com/Articulos/Acreditado/Aceptar_una_insignia/C-mo-empiezo.pdf'],['¿Cómo puedo asegurarme de recibir el correo electrónico de
+notificación de mi insignia?
+', 'Para asegurarse de recibir el correo electrónico de notificación de su insignia y que no termine en su carpeta de correo no deseado..', 'https://www.acreditta.com/Articulos/Acreditado/Aceptar_una_insignia/C-mo-puedo-asegurarme-de-recibir-el-correo-electr-nico-de-notificaci-n-de-mi-insignia_.pdf'],['¿Cómo puedo solicitar una insignia si no se ofrece en la
+  plataforma Acclaim?', 'Si desea una insignia para una credencial específica, certificación u otro reconocimiento de una organización ...', 'https://www.acreditta.com/Articulos/Acreditado/Aceptar_una_insignia/C-mo-puedo-solicitar-una-insignia-si-no-se-ofrece-en-la-plataforma-Acclaim_.pdf'],['¿Puedo aceptar insignias automáticamente?','Si lo desea puede configurar su perfil de Acclaim para aceptar automáticamente las insignias que recibe de organizaciones específicas...','https://www.acreditta.com/Articulos/Acreditado/Aceptar_una_insignia/Puedo-aceptar-insignias-autom-ticamente_.pdf'],['¿Solicitó restablecer la contraseña pero no ha recibido el
+    correo electrónico de confirmación?', 'Puede haber un par de razones por las que no recibe el correo electrónico para
+    restablecer su contraseña...', 'https://www.acreditta.com/Articulos/Acreditado/Aceptar_una_insignia/Solicit-restablecer-la-contrase-a-pero-no-ha-recibido-el-correo-electr-nico-de-confirmaci-n_.pdf'], ['¿Cómo comparto mi insignia con XING?', 'Para compartir su insignia con XING, siga estos pasos...', 'https://www.acreditta.com/Articulos/Acreditado/Compartir_mi_insignia/C-mo-comparto-mi-insignia-con-XING_.pdf'])
+
 ?>
 
 @section('content')
@@ -43,14 +46,22 @@ $a=array("Horse","Dog","Cat");
     </ul>
   </div>
 </nav>
-	<div class="pagina-soporte-container">
+	<div class="pagina-acreditado-container">
 		<div class="row col-12">
-			<h1 class="soporte-bienvenida"> Acreditado </h1>
+			<h1 class="acreditado-bienvenida"> Acreditado </h1>
 		</div>
-		<div>
-		
-		</div>
-		</div>
+    <div>
+    <div class="articulos-container">
+    @foreach ($articulosAcreditado as $articulo)
+    <div class="articulo-preview">
+      <a href={{$articulo[2]}} target="_blank">
+      <h1>{{$articulo[0]}}</h1>
+      <p>{{$articulo[1]}}</p>
+      </a>
+    </div>
+    @endforeach
+  </div>
+    </div>
 	</div>
 
 @endsection

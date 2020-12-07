@@ -1,4 +1,19 @@
 @extends('layout.home')
+<?php
+
+function mostrarArticulos($articulos)
+{
+    return "The article {$articulos} ";
+}
+
+
+$articulos = ['title', 'title 2', 'title 3'];
+
+$c = array_map('mostrarArticulos', $articulos);
+print_r($c);
+
+
+?>
 
 
 @section('content')
@@ -38,6 +53,9 @@
 		<p class="soporte-descripcion">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Amet volutpat consequat mauris nunc congue nisi vitae suscipit. Sit amet aliquam id diam maecenas ultricies. </p>
 		</div>
 		<div class="menu-principal-container">
+    <div>
+
+    </div>
 		</div>
 	</div>
 

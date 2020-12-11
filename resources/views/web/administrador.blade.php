@@ -1,62 +1,86 @@
 @extends('layout.home')
-<?php
 
-function mostrarArticulos($articulos)
-{
-    return "The article {$articulos} ";
-}
+<?php 
 
+$articulosAcreditado = array(['¿Cuáles son los requisitos técnicos para los elementos visuales de las insignias?', 'Una insignia visual es la representación gráfica de su insignia y los metadatos
+asociados. La insignia visual proporciona reconocimiento de marca y establece...', 'https://www.acreditta.com/Articulos/Administrador/Creaci-n-y-gesti-n-de-insignias/Cu-les-son-los-requisitos-t-cnicos-para-los-elementos-visuales-de-las-insignias.pdf'], ['¿En qué idiomas están disponibles los correos electrónicos y las plantillas?', 'La plataforma Acclaim de Credly ofrece las siguientes opciones de idioma...', 'https://www.acreditta.com/Articulos/Administrador/Creaci-n-y-gesti-n-de-insignias/En-que-idiomas-est-n-disponibles-los-correos-electr-nicos-y-las-plantillas_.pdf'], ['¿Puedo actualizar una plantilla después de su emisión? ¿Afecta esto a mis acreditados?', '¡Si! Puede actualizar una plantilla de insignia después de que se haya entregado a sus acreditados. Todas las actualizaciones se mostrarán en tiempo...', 'https://www.acreditta.com/Articulos/Administrador/Creaci-n-y-gesti-n-de-insignias/Puedo-actualizar-una-plantilla-despues-de-su-emisi-n-Afecta-esto-a-mis-acreditados_.pdf'], ['¿Qué es un marco y una taxonomía? ¿Cómo creo uno?', 'Los marcos son a menudo los fundamentos teóricos o educativos de un sistema de insignias. Hay varios marcos publicados que podríamos sugerirle para que los...', 'https://www.acreditta.com/Articulos/Administrador/Creaci-n-y-gesti-n-de-insignias/Que-es-un-marco-y-una-taxonom-a-C-mo-creo-uno_.pdf'], ['¿Qué es una credencial duplicada? ¿Puedo emitir la misma insignia más de una vez a una persona?', 'Cuando se duplica una insignia, se mostrará en el perfil del acreditado varias
+veces (sin importar cuántas veces se haya emitido). Por ejemplo, si su...', 'https://www.acreditta.com/Articulos/Administrador/Creaci-n-y-gesti-n-de-insignias/Que-es-una-credencial-duplicada-Puedo-emitir-la-misma-insignia-m-s-de-una-vez-a-una-persona_.pdf'], ['¿Qué es una plantilla archivada?', 'Las plantillas archivadas son plantillas de insignias que ya no se emiten
+activamente. Una vez que una organización ha decidido retirar una insignia,
+', 'https://www.acreditta.com/Articulos/Administrador/Creaci-n-y-gesti-n-de-insignias/Que-es-una-plantilla-archivada_.pdf'], ['¿Qué son las recomendaciones? ¿Cómo puedo agregar una recomendación a una plantilla?', '¿Qué son las recomendaciones?
+Las recomendaciones son un campo de metadatos poderoso que guía a los
+acreditados en los siguientes pasos que pueden tomar después de aceptar una...', 'https://www.acreditta.com/Articulos/Administrador/Creaci-n-y-gesti-n-de-insignias/Que-son-las-recomendaciones-C-mo-puedo-agregar-una-recomendaci-n-a-una-plantilla_.pdf'], ['¿Qué son los “atributos de la plantilla”?', 'Los atributos de plantilla son campos de metadatos opcionales que le permiten
+indicar el tipo, nivel, compromiso de tiempo y costo de cada insignia...', 'https://www.acreditta.com/Articulos/Administrador/Creaci-n-y-gesti-n-de-insignias/Que-son-los-atributos-de-la-plantilla.pdf'], ['¿Qué son los metadatos de la insignia? ¿Cómo agregar metadatos a una plantilla?', 'Los metadatos de la insignia son el contenido que se crea para representar la
+credencial, la certificación, el curso o la designación que está obteniendo. Esta...', 'https://www.acreditta.com/Articulos/Administrador/Creaci-n-y-gesti-n-de-insignias/Que-son-los-metadatos-de-la-insignia-C-mo-agregar-metadatos-a-una-plantilla_.pdf'], ['¿Qué sucede cuando actualizo una plantilla?', 'Todos los cambios de plantilla se actualizan en tiempo real. Si edita una plantilla publicada, la plantilla mostrará inmediatamente la información', 'https://www.acreditta.com/Articulos/Administrador/Creaci-n-y-gesti-n-de-insignias/Que-sucede-cuando-actualizo-una-plantilla_.pdf'], ['¿Acreditta cumple con GDPR?', 'Sí, Acreditta cumple con GDPR. El Reglamento general de privacidad de datos (GDPR) de la Unión Europea es una ley que busca otorgar a las personas control sobre sus...', 'https://www.acreditta.com/Articulos/Administrador/Developers/Acreditta-cumple-con-GDPR_.pdf'], ['¿Dónde puedo obtener más información sobre la API abierta de Acclaim?', 'La plataforma Acclaim de Credly tiene una API abierta...', 'https://www.acreditta.com/Articulos/Administrador/Developers/D-nde-puedo-obtener-m-s-informaci-n-sobre-la-API-abierta-de-Acclaim_.pdf'], ['¿Existe un sitio de prueba en el que podamos probar las integraciones?', '¡Si! Comuníquese con su Customer Success de Acreditta y estaremos encantados de configurar una cuenta Sandbox para su organización...', 'https://www.acreditta.com/Articulos/Administrador/Developers/Existe-un-sitio-de-prueba-en-el-que-podamos-probar-las-integraciones_.pdf'], ['¿Qué aplicaciones están integradas actualmente con la plataforma Acclaim de Credly?', 'La plataforma Acclaim de Credly ofrece actualmente integración con las siguientes aplicaciones LMS...', 'https://www.acreditta.com/Articulos/Administrador/Developers/Que-aplicaciones-est-n-integradas-actualmente-con-la-plataforma-Acclaim-de-Credly_.pdf'], ['¿Qué es Blockchain?', 'Blockchain es una tecnología emergente que permite acceder a la información y confiar en ella sin depender de una sola autoridad o base de datos', 'https://www.acreditta.com/Articulos/Administrador/Developers/Que-es-Blockchain_.pdf'], ['¿Cómo actualizo y reemplazo la insignia de un acreditado después de emitirla? ¿Qué información se puede actualizar?','Una vez que se haya emitido una insignia a un acreditado, aún podrá actualizar
+información de la insignia en caso de ser necesario. La información que puede...', 'https://www.acreditta.com/Articulos/Administrador/Emisi-n-de-insignias/C-mo-actualizo-y-reemplazo-la-insignia-de-un-acreditado-despu-s-de-emitirla-Que-informaci-n-se-puede-actualizar_.pdf'], ['¿Cómo agrego evidencia al emitir?', 'La evidencia es una característica opcional que puede utilizar al emitir credenciales a sus acreditados. Puede agregar evidencia de forma manual para...', 'https://www.acreditta.com/Articulos/Administrador/Emisi-n-de-insignias/C-mo-agrego-evidencia-al-emitir_.pdf'], ['¿Cómo expido una insignia a un solo acreditado?', 'Para emitir una insignia única, primero seleccione la plantilla que desea emitir de sus plantillas de insignia publicadas. Una vez en la página de la plantilla de...', 'https://www.acreditta.com/Articulos/Administrador/Emisi-n-de-insignias/C-mo-expido-una-insignia-a-un-solo-acreditado_.pdf'], ['¿Cómo puedo emitir insignias de forma masiva?', 'Recientemente actualizamos nuestra plantilla de emisión masiva para incluir dos columnas adicionales, O (Título de la evidencia de identificación) y P...', 'https://www.acreditta.com/Articulos/Administrador/Emisi-n-de-insignias/C-mo-puedo-emitir-insignias-de-forma-masiva_.pdf'], ['¿Dónde puedo encontrar el ID de la plantilla?', 'Para ubicar un ID de plantilla, simplemente navegue hasta el botón "Desarrolladores" en el panel de navegación del lado izquierdo de su', 'https://www.acreditta.com/Articulos/Administrador/Emisi-n-de-insignias/D-nde-puedo-encontrar-el-ID-de-la-plantilla_.pdf'], ['¿Por qué recibo un error cuando emito insignias de forma masiva?', 'Hay dos tipos de errores que pueden ocurrir al emitir de forma masiva las insignias de su organización...', 'https://www.acreditta.com/Articulos/Administrador/Emisi-n-de-insignias/Por-que-recibo-un-error-cuando-emito-insignias-de-forma-masiva_.pdf'], ['¿Puedo emitir plantillas privadas? ¿Puede un acreditado compartirlas?', 'Sí, puede emitir cualquier plantilla que esté publicada y marcada como
+privada...', 'https://www.acreditta.com/Articulos/Administrador/Emisi-n-de-insignias/Puedo-emitir-plantillas-privadas-Puede-un-acreditado-compartirlas_.pdf'], ['¿Puedo emitir una insignia a una organización en lugar de a un individuo?', 'En primer lugar, deberá crear una insignia que sea específica para las
+organizaciones y no para los usuarios. Para hacer esto, seleccione...', 'https://www.acreditta.com/Articulos/Administrador/Emisi-n-de-insignias/Puedo-emitir-una-insignia-a-una-organizaci-n-en-lugar-de-a-un-individuo_.pdf'], ['¿Qué pasa si revoco una insignia?', 'Como administrador de su organización, tiene la capacidad de revocar la
+insignia de un asalariado. Como práctica recomendada, si necesita actualizar la...', 'https://www.acreditta.com/Articulos/Administrador/Emisi-n-de-insignias/Que-pasa-si-revoco-una-insignia_.pdf'], ['¿Cómo es la experiencia de usuario de mi acreditado?', 'Correo electrónico de notificación...', 'https://www.acreditta.com/Articulos/Administrador/Experiencia-de-los-acreditados/C-mo-es-la-experiencia-de-usuario-de-mi-acreditado_.pdf'], ['¿Cómo les doy a mis acreditados la posibilidad de compartir en blockchain?', 'Comuníquese con su Customer Success Manager (CSM) si desea que la opción de publicación blockchain esté habilitada dentro de la cuenta de su organización...', 'https://www.acreditta.com/Articulos/Administrador/Experiencia-de-los-acreditados/C-mo-les-doy-a-mis-acreditados-la-posibilidad-de-compartir-en-blockchain_.pdf'], ['¿Por qué Linkedin requiere que el usuario le dé acceso para publicar en su nombre?', 'Acclaim nunca publicará algo en las redes sociales a las que tenga acceso sin la iniciación o el permiso del usuario...', 'https://www.acreditta.com/Articulos/Administrador/Experiencia-de-los-acreditados/Por-que-Linkedin-requiere-que-el-usuario-le-de-acceso-para-publicar-en-su-nombre.pdf'], ['Preguntas frecuentes sobre insignias vencidas', 'Algunas preguntas frecuentes son...', 'https://www.acreditta.com/Articulos/Administrador/Experiencia-de-los-acreditados/Preguntas-frecuentes-sobre-insignias-vencidas.pdf'], ['¿Puedo reenviar una notificación a un acreditado?', 'Una vez que haya emitido una insignia, el acreditado se incluirá en el siguiente ciclo de recordatorios por correo electrónico. Cuando su acreditado acepte su...', 'https://www.acreditta.com/Articulos/Administrador/Experiencia-de-los-acreditados/Puedo-reenviar-una-notificaci-n-a-un-acreditado_.pdf'], ['¿Qué hago cuando un acreditado dice que no ha recibido su insignia?', 'Cuando un acreditado se ponga en contacto con usted debido a la falta de una
+insignia, le recomendamos que primero verifique si el usuario la obtuvo a...', 'https://www.acreditta.com/Articulos/Administrador/Experiencia-de-los-acreditados/Que-hago-cuando-un-acreditado-dice-que-no-ha-recibido-su-insignia_.pdf'], ['Tengo varios administradores, ¿cómo administro sus roles de usuario?', 'La pestaña Usuarios mostrará una lista de todos los usuarios activos e
+  invitaciones pendientes que ha enviado a personas para administrar el...', 'https://www.acreditta.com/Articulos/Administrador/Gesti-n-organizativa-para-administradores/Tengo-varios-administradores-c-mo-administro-sus-roles-de-usuario_.pdf'], ['¿Cómo puede mi organización utilizar Labor Market Insights (LMI)?', '¿De dónde viene LMI?', 'https://www.acreditta.com/Articulos/Administrador/Gesti-n-organizativa-para-administradores/C-mo-puede-mi-organizaci-n-utilizar-Labor-Market-Insights-(LMI)_.pdf'], ['¿Cómo puede mi organización utilizar Labor Market Insights (LMI)?', '¿De dónde viene LMI?', 'https://www.acreditta.com/Articulos/Administrador/Gesti-n-organizativa-para-administradores/C-mo-puede-mi-organizaci-n-utilizar-Labor-Market-Insights-(LMI)_.pdf'], ['¿Cómo puedo habilitar la opción de imprimir una credencial digital como certificado?', 'De forma predeterminada, la impresión de un certificado está desactivada. Para habilitar la opción "imprimir credencial" para su organización...', 'https://www.acreditta.com/Articulos/Administrador/Gesti-n-organizativa-para-administradores/C-mo-puedo-habilitar-la-opci-n-de-imprimir-una-credencial-digital-como-certificado_.pdf'], ['¿Cuáles son sus mejores prácticas con respecto a la gobernanza en la educación superior?', '¿Por qué es importante la gobernanza?', 'https://www.acreditta.com/Articulos/Administrador/Gesti-n-organizativa-para-administradores/Cu-les-son-sus-mejores-pr-cticas-con-respecto-a-la-gobernanza-en-la-educaci-n-superior_.pdf'], ['¿Puedo escribir mis propios mensajes de correo electrónico?', 'La plataforma Acclaim de Credly permite personalizar varios campos de texto sin costo alguno. Espere una semana desde el momento en que su equipo...', 'https://www.acreditta.com/Articulos/Administrador/Gesti-n-organizativa-para-administradores/Puedo-escribir-mis-propios-mensajes-de-correo-electr-nico_.pdf'], ['¿Puedo ver cuantas insignias me quedan en mi suscripción?', '¡Sí puedes! Para ver su suscripción y uso actual...', 'https://www.acreditta.com/Articulos/Administrador/Gesti-n-organizativa-para-administradores/Puedo-ver-cuantas-insignias-me-quedan-en-mi-suscripci-n_.pdf'], ['¿Qué análisis puedo ver como administrador de mi organización?', 'Los siguientes análisis están disponibles para usted como administrador de su cuenta...', 'https://www.acreditta.com/Articulos/Administrador/Gesti-n-organizativa-para-administradores/Que-an-lisis-puedo-ver-como-administrador-de-mi-organizaci-n_.pdf'], ['¿Qué es el directorio? ¿Cómo puedo habilitar la función de directorio para mi organización?', 'El directorio público es una función adicional de pago de la plataforma Acclaim de Credly que los emisores pueden comprar para hacer que una base de datos...', 'https://www.acreditta.com/Articulos/Administrador/Gesti-n-organizativa-para-administradores/Que-es-el-directorio-C-mo-puedo-habilitar-la-funci-n-de-directorio-para-mi-organizaci-n_.pdf'], ['¿Qué pasa con la insignia de un acreditado si abandona nuestra organización? ¿Cómo puede un acreditado agregar una dirección de correo electrónico secundaria?', 'La plataforma Acclaim de Credly usa la dirección de correo electrónico de un acreditado como su identificador único, lo que significa que la insignia siempre...', 'https://www.acreditta.com/Articulos/Administrador/Gesti-n-organizativa-para-administradores/Que-pasa-con-la-insignia-de-un-acreditado-si-abandona-nuestra-organizaci-n-C-mo-puede-un-acreditado-agregar-una-direcci-n-de-correo-electr-nico-secundaria_.pdf'], ['¿Qué puede causar una baja tasa de aceptación? ¿Cómo podemos mejorarla?', 'Algunas de las causas de las bajas tasas de aceptación son: ...', 'https://www.acreditta.com/Articulos/Administrador/Gesti-n-organizativa-para-administradores/Que-puede-causar-una-baja-tasa-de-aceptaci-n-C-mo-podemos-mejorarla_.pdf'], ['¿Qué significan todos los IDs?', 'Encontrará varios ID en la plataforma, la documentación y los análisis. Aquí hay una descripción general de lo que significan todos...', 'https://www.acreditta.com/Articulos/Administrador/Gesti-n-organizativa-para-administradores/Que-significan-todos-los-IDs_.pdf'], ['¿Qué son las colecciones y cómo las uso?', 'Su organización puede usar Colecciones para agrupar las plantillas de insignias con el fin de facilitar la generación de informes y la administración de usuarios...', 'https://www.acreditta.com/Articulos/Administrador/Gesti-n-organizativa-para-administradores/Que-son-las-colecciones-y-c-mo-las-uso_.pdf']);
 
-$articulos = ['title', 'title 2', 'title 3'];
-
-$c = array_map('mostrarArticulos', $articulos);
-print_r($c);
-
+$videosAcreditado = array(['Cómo puedo ver el portal de la organización y qué puedo gestionar desde allí', 'https://www.acreditta.com/Tutoriales/Administrador/C-mo-puedo-ver-el-portal-de-la-organizaci-n-y-que-puedo-gestionar-desde-alli.mp4'], ['Cómo puedo saber quiénes usan Acclaim en el mundo y la forma como usan sus insignias', 'https://www.acreditta.com/Tutoriales/Administrador/C-mo-puedo-saber-qui-nes-usan-Acclaim-en-el-mundo-y-la-forma-como-usan-sus-insignias.mp4'], ['Cómo puedo editar la información del portal de la organización en Acclaim', 'https://www.acreditta.com/Tutoriales/Administrador/C-mo-puedo-editar-la-informaci-n-del-portal-de-la-organizaci-n-en-Acclaim.mp4'], ['Cómo puedo gestionar los administradores asociados al portal de la organización en Acclaim', 'https://www.acreditta.com/Tutoriales/Administrador/C-mo-puedo-gestionar-los-administradores-asociados-al-portal-de-la-organizaci-n-en-Acclaim.mp4'], ['Cómo puedo saber el uso que hemos hecho de la suscripción', 'https://www.acreditta.com/Tutoriales/Administrador/C-mo-puedo-saber-el-uso-que-hemos-hecho-de-la-suscripci-n.mp4'], ['Dónde consigo el template ID de una insignia para la emisión masiva', 'https://www.acreditta.com/Tutoriales/Administrador/D-nde-consigo-el-template-ID-de-una-insignia-para-la-emisi-n-masiva.mp4'], ['Qué reportes genera la plataforma y cómo interpretarlos', 'https://www.acreditta.com/Tutoriales/Administrador/Que-reportes-genera-la-plataforma-y-c-mo-interpretarlos-2-partes-juntas.mp4'], ['Cómo puedo editar, eliminar, revocar o enviar un correo de notificación una insignia emitida', 'https://www.acreditta.com/Tutoriales/Administrador/C-mo-puedo-editar-eliminar-revocar-o-enviar-un-correo-de-notificaci-n-una-insignia-emitida.mp4'], ['Cómo puedo crear, editar y eliminar categorías de insignias', 'https://www.acreditta.com/Tutoriales/Administrador/C-mo-puedo-crear-editar-y-eliminar-categor-as-de-insignias.mp4'], ['Dónde consigo la información sobre la API de Acclaim, webhooks y tokens','https://www.acreditta.com/Tutoriales/Administrador/D-nde-consigo-la-informaci-n-sobre-la-API-de-Acclaim-webhooks-y-tokens.mp4'], ['Cómo crear, editar, duplicar y eliminar certificados en PDF', 'https://www.acreditta.com/Tutoriales/Administrador/c-mo-crear-editar-duplicar-y-eliminar-certificados-en-PDF.mp4'], ['Cómo crear, editar, duplicar y eliminar plantillas de insignias', 'https://www.acreditta.com/Tutoriales/Administrador/c-mo-crear-editar-duplicar-y-eliminar-plantillas-de-insignias.mp4']);
 
 ?>
 
-
 @section('content')
 <nav class="navbar navbar-expand-lg navbar navbar-dark" style="background-color: #0F305D;">
-  <a class="navbar-brand" href="#">
+  <a class="navbar-brand" href="/">
 	  <img src="https://www.acreditta.com/img/logo.svg" alt="" class="img-fluid logo-header">
   </a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Insignias Digitales</a>
+        <a class="nav-link" href="https://www.acreditta.com/insignias-digitales">Insignias Digitales</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Blog</a>
+        <a class="nav-link" href="https://www.acreditta.com/aprende">Blog</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Nosotros</a>
+        <a class="nav-link" href="https://www.acreditta.com/nosotros">Nosotros</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Contáctanos</a>
+        <a class="nav-link" href="https://www.acreditta.com/contactanos">Contáctanos</a>
       </li>
     </ul>
   </div>
 </nav>
-	<div class="pagina-soporte-container">
-		<div class="row col-12">
-			<h1 class="soporte-bienvenida"> Administrador </h1>
+	<div class="pagina-acreditado-container">
+		<div class="acreditado-bienvenida-container">
+			<div class="acreditado-textos-container">
+      <h1 class="acreditado-bienvenida"> Administradores </h1>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Amet volutpat consequat mauris nunc congue nisi vitae suscipit. Sit amet aliquam id diam maecenas ultricies.</p>
+      </div>
 		</div>
-		<div>
-		<p class="soporte-descripcion">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Amet volutpat consequat mauris nunc congue nisi vitae suscipit. Sit amet aliquam id diam maecenas ultricies. </p>
-		</div>
-		<div class="menu-principal-container">
     <div>
-
+    <h1 class="pagina-acreditado-subtitulos">Artículos</h1>
+    <div class="articulos-container">
+    @foreach ($articulosAcreditado as $articulo)
+    <div class="articulo-preview">
+      <a href={{$articulo[2]}} target="_blank">
+      <h1>{{$articulo[0]}}</h1>
+      <p>{{$articulo[1]}}</p>
+      </a>
     </div>
-		</div>
+    @endforeach
+    </div>
+    <h1 class="pagina-acreditado-subtitulos">Videos tutoriales</h1>
+    <div class="articulos-container">
+    @foreach ($videosAcreditado as $video)
+    <div class="articulo-preview">
+      <a href={{$video[1]}} target="_blank">
+      <h1>{{$video[0]}}</h1>
+      </a>
+    </div>
+    @endforeach
+    </div>
+  </div>
+    </div>
 	</div>
 
 @endsection

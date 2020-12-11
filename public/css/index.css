@@ -4,6 +4,16 @@
 	margin-right: auto;
 }
 
+.pagina-soporte-portada {
+	background: url("https://acreditta.com/img/bg-portada-blog.png");
+    padding-top: 110px;
+	padding-bottom: 75px;
+	width: 100%;
+	height: 100%;
+	background-size: 100%;
+	box-sizing: border-box;
+}
+
 .pagina-soporte-container {
 	display: flex;
 	flex-direction: column;
@@ -11,18 +21,33 @@
 	position: relative;
 	height: 73%;
 	width: 100%;
-	padding-top: 50px;
+}
+
+.pagina-soporte-portada {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+
+.pagina-soporte-imagen-container img{
+	width: 450px;
+	border-radius: 10px;
+}
+.pagina-soporte-textos{
+	color: white;
 }
 
 .menu-principal-container {
 	display: grid;
 	grid-template-columns: 50% 50%;
 	grid-template-rows: 91% 12%;
-	max-height: 400px;
+	max-height: 300px;
 	position: relative;
 	max-width: 670px;
 	grid-template-areas: "acreditados" "administradores";
 	gap: 29px;
+	padding-top: 40px;
+	margin-bottom: 80px;
 }
 
 .acreditados-card,
@@ -57,12 +82,14 @@
 .acreditados-card-title,
 .administrador-card-title {
 	font-size: 1.5rem;
+	text-align: center;
 }
 
 .administrador-card-desc,
 .acreditados-card-desc {
 	font-size: 1.1rem;
-	text-align: center;
+	text-align: justify;
+	padding: 10px;
 }
 
 .ir-al-articulo-button {
@@ -72,7 +99,7 @@
 	border-radius: 6px;
 	margin-right: 5px;
 	margin-bottom: 5px;
-	background: #b7b7b7;
+	background: #E11F1C;
 	color: var(--light) !important;
 	cursor: pointer;
 	border-color: #b7b7b7;
@@ -101,7 +128,8 @@
 .articulos-container {
 	display: flex;
     justify-content: center;
-    flex-wrap: wrap;
+	flex-wrap: wrap;
+	padding-top: 40px;
 }
 
 .articulo-preview{
@@ -120,9 +148,55 @@
 
 .articulo-preview h1{
 	font-size: 20px;
-	text-align: justify;
+	text-align: left;
 }
 
 .articulo-preview {
 	text-align: justify;
+}
+
+.pagina-acreditado-subtitulos{
+	display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 50px;
+}
+
+.acreditado-bienvenida-container{
+	max-width: 100%;
+	display: flex;
+	flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 0px;
+}
+
+.acreditado-bienvenida-container p{
+	max-width: 60%;
+	padding-top: 20px;
+	text-align: justify;
+}
+
+.acreditado-bienvenida-container {
+	background: url("https://acreditta.com/img/bg-portada.png");
+    padding-top: 110px;
+	padding-bottom: 75px;
+	width: 100%;
+	height: 100%;
+	background-size: 100%;
+	box-sizing: border-box;
+}
+
+.acreditado-textos-container{
+	color: white;
+	font-size: 32px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.acreditado-textos-container p {
+	font-size: 25px;
+	text-align: center;
 }

@@ -6,7 +6,7 @@
 
 .pagina-soporte-portada {
 	background: url("https://acreditta.com/img/bg-portada-blog.png");
-    padding-top: 110px;
+	padding-top: 110px;
 	padding-bottom: 75px;
 	width: 100%;
 	height: 100%;
@@ -29,11 +29,11 @@
 	align-items: center;
 }
 
-.pagina-soporte-imagen-container img{
+.pagina-soporte-imagen-container img {
 	width: 450px;
 	border-radius: 10px;
 }
-.pagina-soporte-textos{
+.pagina-soporte-textos {
 	color: white;
 }
 
@@ -99,7 +99,7 @@
 	border-radius: 6px;
 	margin-right: 5px;
 	margin-bottom: 5px;
-	background: #E11F1C;
+	background: #e11f1c;
 	color: var(--light) !important;
 	cursor: pointer;
 	border-color: #b7b7b7;
@@ -127,26 +127,26 @@
 
 .articulos-container {
 	display: flex;
-    justify-content: center;
+	justify-content: center;
 	flex-wrap: wrap;
 	padding-top: 40px;
 }
 
-.articulo-preview{
+.articulo-preview {
 	max-width: 300px;
 	cursor: pointer;
 	border-radius: 5px;
 	padding: 30px 20px;
-	box-shadow: 0 0 9px 0 rgba(0,0,0,.2);
+	box-shadow: 0 0 9px 0 rgba(0, 0, 0, .2);
 	margin: 20px;
 }
 
 .articulo-preview a {
-	text-decoration:none;
+	text-decoration: none;
 	color: black;
 }
 
-.articulo-preview h1{
+.articulo-preview h1 {
 	font-size: 20px;
 	text-align: left;
 }
@@ -155,23 +155,23 @@
 	text-align: justify;
 }
 
-.pagina-acreditado-subtitulos{
+.pagina-acreditado-subtitulos {
 	display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-top: 50px;
+	justify-content: center;
+	align-items: center;
+	padding-top: 50px;
 }
 
-.acreditado-bienvenida-container{
+.acreditado-bienvenida-container {
 	max-width: 100%;
 	display: flex;
 	flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 20px 0px;
+	align-items: center;
+	justify-content: center;
+	padding: 20px 0px;
 }
 
-.acreditado-bienvenida-container p{
+.acreditado-bienvenida-container p {
 	max-width: 60%;
 	padding-top: 20px;
 	text-align: justify;
@@ -179,7 +179,7 @@
 
 .acreditado-bienvenida-container {
 	background: url("https://acreditta.com/img/bg-portada.png");
-    padding-top: 110px;
+	padding-top: 110px;
 	padding-bottom: 75px;
 	width: 100%;
 	height: 100%;
@@ -187,7 +187,7 @@
 	box-sizing: border-box;
 }
 
-.acreditado-textos-container{
+.acreditado-textos-container {
 	color: white;
 	font-size: 32px;
 	display: flex;
@@ -199,4 +199,57 @@
 .acreditado-textos-container p {
 	font-size: 25px;
 	text-align: center;
+}
+
+.articulo-preview p {
+	color: gray;
+}
+
+@media screen and (max-width: 480px) {
+	.acreditado-bienvenida-container {
+		height: 100px;
+		background-size: 400px;
+	}
+
+	.acreditado-textos-container h1,
+	.acreditado-textos-container p {
+		display: none;
+	}
+
+	.pagina-acreditado-subtitulos {
+		padding-top: 20px;
+	}
+
+	.pagina-soporte-portada {
+		display: flex;
+		flex-direction: column-reverse;
+		background-size: cover;
+		padding-top: 30px;
+	}
+
+	.menu-principal-container {
+		display: flex;
+		flex-direction: column;
+		padding-top: 0px;
+	}
+
+	.soporte-descripcion {
+		width: 100%;
+	}
+
+	.pagina-soporte-imagen-container img {
+		width: 80%;
+	}
+
+	.pagina-soporte-imagen-container {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		padding-bottom: 10px;
+	}
+
+	.soporte-bienvenida {
+		text-align: center;
+		font-size: 1.6rem;
+	}
 }

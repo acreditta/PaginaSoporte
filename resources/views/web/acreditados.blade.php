@@ -65,7 +65,7 @@ notificación de mi insignia?
 		<div class="acreditado-bienvenida-container">
 			<div class="acreditado-textos-container">
       <h1 class="acreditado-bienvenida"> Acreditados </h1>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Amet volutpat consequat mauris nunc congue nisi vitae suscipit. Sit amet aliquam id diam maecenas ultricies.</p>
+      <p>Bienvenido/a al repositorio de conocimiento para acreditados con insignias digitales, desde aquí podrás acceder a nuestros tutoriales paso a paso y explorar las preguntas frecuentes. Si aún tienes dudas después de revisar nuestro contenido, podrás recibir asistencia contactándote a soporte@acreditta.com.</p>
       </div>
 		</div>
     <div>

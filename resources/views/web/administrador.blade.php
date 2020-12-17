@@ -54,7 +54,7 @@ $videosAcreditado = array(['Cómo puedo ver el portal de la organización y qué
 		<div class="acreditado-bienvenida-container">
 			<div class="acreditado-textos-container">
       <h1 class="acreditado-bienvenida"> Administradores </h1>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Amet volutpat consequat mauris nunc congue nisi vitae suscipit. Sit amet aliquam id diam maecenas ultricies.</p>
+      <p>Bienvenido/a al repositorio de conocimiento para administradores de la plataforma Acreditta, desde aquí podrá acceder a nuestros tutoriales paso a paso, explorar las preguntas frecuentes y conocer todas sus funcionalidades de manera detallada. Si aún tienes dudas después de revisar nuestro contenido, podrás recibir asistencia contactándote a soporte@acreditta.com.</p>
       </div>
 		</div>
     <div>

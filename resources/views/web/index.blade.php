@@ -32,7 +32,7 @@
       <div class="pagina-soporte-portada">
 			<div class="pagina-soporte-textos">
       <h1 class="soporte-bienvenida"> ¡Hola! ¿Cómo podemos ayudarte? </h1>
-      <p class="soporte-descripcion">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Amet volutpat consequat mauris nunc congue nisi vitae suscipit. Sit amet aliquam id diam maecenas ultricies. </p>
+      <p class="soporte-descripcion">¡Hola! Te damos la bienvenida al repositorio de conocimiento de Acreditta, este es un espacio en el cual podrás consultar todos nuestros artículos y ver videos tutoriales que te explicaran paso a paso el manejo de las funcionalidades de la plataforma de insignias digitales.</p>
       </div>
       <div class="pagina-soporte-imagen-container">
       <img src="https://acreditta.com/uploads/blog/202011241214176.png" alt="">

@@ -12,3 +12,5 @@
 */
 
 Route::get('/', 'home@index');
+Route::get('/acreditados', 'acreditados@acreditados');
+Route::get('/administrador', 'administrador@administrador');

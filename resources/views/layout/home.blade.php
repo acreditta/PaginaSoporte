@@ -10,7 +10,7 @@
         <link rel="stylesheet"  type="text/css" href="{{asset('css/index.css')}}">
         <script src="{{asset('js/index.js')}}"></script>
        
-        <title>Soporte Inicio</title>
+        <title>Soporte Acreditta</title>
        
     </head>
     <body>
